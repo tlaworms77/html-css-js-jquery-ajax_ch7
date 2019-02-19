@@ -1,0 +1,2 @@
+﻿ajax-ex1.txt 의 텍스트 입니다.
+ajax-ex1.txt 의 텍스트 입니다.

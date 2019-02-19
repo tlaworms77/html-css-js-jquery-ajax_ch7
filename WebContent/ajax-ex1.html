@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ajax-ex1</title>
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("button").click(function() {
+			$("p").load("ajax-ex1.txt");
+		});
+	});
+</script>
+</head>
+<body>
+	<button>변경</button>
+	<p>변경전</p>
+</body>
+</html>

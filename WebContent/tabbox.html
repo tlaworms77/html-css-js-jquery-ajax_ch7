@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/tabbox.css">
+<script type="text/javascript">
+	
+	var TabBox = {
+		$_selectTab: null,
+		$_selectTabview: null,
+		init: function(){
+			$_select = $("#tab li:nth-child(1)");
+			console.log($_select);
+			$_select.addClass("selected");
+			
+			$("#tab li:nth-child(1)").attr({
+				"data-vid": "view-1"
+			});
+			$("#tab li:nth-child(2)").attr({
+				"data-vid": "view-2"
+			});
+			$("#tab li:nth-child(3)").attr({
+				"data-vid": "view-3"
+			});
+			$("#tab li:nth-child(4)").attr({
+				"data-vid": "view-4"
+			});
+			$("#tab li:nth-child(5)").attr({
+				"data-vid": "view-5"
+			});
+			
+			///// tabview
+			$("#tabview p:nth-child(1)").attr({
+				
+			});
+			
+			var vid = "#" + $_select.data("vid");
+			$("p").css({
+				"display": "none"
+			});
+			$(vid).css({
+				"display": "block"
+			});
+			
+			
+// 			$_select.click(Selector._onTabClicked.bind(this));
+// 			console.log("22");
+		},
+		_changeTab: function(){
+			$_select.removeClass("selected");
+			$_select = $(this);
+			$_select.addClass("selected");
+		},
+		_onTabClicked: function(){
+			console.log("_onTabClicked");
+			Selector._changeTab();
+		}
+		
+	};
+
+	$(function(){
+		// console.log("loaded!");
+		TabBox.init();
+		$("#tab li").click(function(){
+			$("#tab li.selected").removeClass("selected");
+			$(this).addClass("selected");
+			
+			var vid = "#" + $(this).data("vid");
+			$("p").css({
+				"display": "none"
+			});
+			$(vid).css({
+				"display": "block"
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="tab-box">
+		<ul id="tab">
+			<li>메뉴 1</li>
+			<li>메뉴 2</li>
+			<li>메뉴 3</li>
+			<li>메뉴 4</li>
+			<li>메뉴 5</li>
+		</ul>
+		<div id="tabview">
+			<!-- show/hide 기능 -->
+			<p id="view-1">탭뷰1 입니다.</p>
+			<p id="view-2">탭뷰2 입니다.</p>
+			<p id="view-3">탭뷰3 입니다.</p>
+			<p id="view-4">탭뷰4 입니다.</p>
+			<p id="view-5">탭뷰5 입니다.</p>
+		</div>
+	</div>
+</body>
+</html>

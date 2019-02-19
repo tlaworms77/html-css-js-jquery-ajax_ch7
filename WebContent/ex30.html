@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
+<script type="text/javascript">
+	$( function() {
+		/* 코드를 완성하세요 */
+		setTimeout(() => {
+			$(".d1").wrap("<h1>");
+			$(".d2").wrap("<h2>").
+			parent().
+			css("padding-left", "20px");
+			/* 
+				parent()는 자기자신이 아니라 어떠한 엘리먼트를 골라내는 메소드이며 부모를 부른다. 
+				따라서 em에 h2를 감싸고 그로인한 h2가 em의 부모가 된다.
+			*/
+		}, 1000);
+} );  
+</script>
+</head>
+<body>
+
+
+<em class="d1">1장</em>
+
+<em class="d2">1-1 절</em>
+
+<em class="d2">1-2 절</em>
+
+<em class="d2">1-3 절</em>
+
+<em class="d1">2장</em>
+
+<em class="d2">2-1 절</em>
+
+<em class="d2">2-2 절</em>
+
+<em class="d2">2-3 절</em>
+
+</body>
+</html>
